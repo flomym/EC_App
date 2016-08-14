@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160812095310) do
     t.datetime "updated_at",                  null: false
     t.boolean  "recommended", default: false, null: false
     t.integer  "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
 
   create_table "line_items", force: :cascade do |t|
