@@ -5,8 +5,8 @@ class Order < ApplicationRecord
         checked_out: 1
     }
 
-    before_save do
-        status = "cart"
+    before_create do
+        self.status = Order.statuses[:cart]
     end
 
     def checkout!(at)
