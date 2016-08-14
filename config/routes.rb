@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 	resources :categories, only: %i(index) do
 		resources :items, only: %w(index)
 	end
+
+	resources :line_items
+	resources :orders
 end
