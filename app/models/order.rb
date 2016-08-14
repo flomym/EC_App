@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-    has_many :line_items
+    has_many :line_items, :dependent => :delete_all
     enum status: {
         cart: 0,
         checked_out: 1
