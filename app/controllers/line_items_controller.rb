@@ -15,6 +15,7 @@ class LineItemsController < ApplicationController
     else
       Order.create!.tap do |order|
         session[:current_order_id] = order.id
+        order.status = Order.statuses[:cart]
       end
     end
   end

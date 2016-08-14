@@ -5,10 +5,6 @@ class Order < ApplicationRecord
         checked_out: 1
     }
 
-    before_create do
-        self.status = Order.statuses[:cart]
-    end
-
     def checkout!(at)
         update!(status: :checked_out, ordered_at: at)
     end
